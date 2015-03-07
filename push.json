@@ -1,0 +1,9 @@
+{
+  "webPort": 8000,
+
+  "mongodbUrl": "mongodb://username:password@localhost/database",
+
+  "gcm": {
+    "apiKey": "AIzaSyCXNnoeEVyQq39OBD0SF3KOxU3uuG54doU"
+  }
+}
