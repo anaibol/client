@@ -1,0 +1,28 @@
+{
+    "nl.x-services.plugins.googleplus": {
+        "source": {
+            "type": "registry",
+            "id": "nl.x-services.plugins.googleplus"
+        }
+    },
+    "android.support.v4": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MobileChromeApps/cordova-plugin-android-support-v4",
+            "subdir": "."
+        }
+    },
+    "com.google.playservices": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MobileChromeApps/google-play-services",
+            "subdir": "."
+        }
+    },
+    "com.phonegap.plugins.facebookconnect": {
+        "source": {
+            "type": "local",
+            "path": "/home/anaibol/phonegap-facebook-plugin"
+        }
+    }
+}
