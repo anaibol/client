@@ -119,12 +119,11 @@ facebookConnectPlugin.login([], function(data) {
   console.log(err)
 });
 
-
-facebookConnectPlugin.login({},
+window.plugins.googleplus.login({},
   function(obj) {
-    alert(JSON.stringify(obj)); // do something useful instead of alerting
+    console.log(JSON.stringify(obj)); // do something useful instead of alerting
   },
   function(msg) {
-    alert('error: ' + msg);
+    console.log('error: ' + msg);
   }
 );
