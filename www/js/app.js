@@ -31,7 +31,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       // Error
     });
 
-<<<<<<< HEAD
     // $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
     //   alert(123);
     //   switch (notification.event) {
@@ -55,31 +54,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     //       break;
     //   }
     // });
-=======
-    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
-      alert(123);
-      switch (notification.event) {
-        case 'registered':
-          if (notification.regid.length > 0) {
-            alert('registration ID = ' + notification.regid);
-          }
-          break;
-
-        case 'message':
-          // this is the actual push notification. its format depends on the data model from the push server
-          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
-          break;
-
-        case 'error':
-          alert('GCM error = ' + notification.msg);
-          break;
-
-        default:
-          alert('An unknown GCM event has occurred');
-          break;
-      }
-    });
->>>>>>> ca8bfe93afc49dc469bec77cd5ef82de383f28ff
   });
 })
 
@@ -131,7 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
-<<<<<<< HEAD
 });
 
 
@@ -144,6 +117,14 @@ facebookConnectPlugin.login([], function(data) {
   console.log(data)
 }, function(err) {
   console.log(err)
-=======
->>>>>>> ca8bfe93afc49dc469bec77cd5ef82de383f28ff
 });
+
+
+facebookConnectPlugin.login({},
+  function(obj) {
+    alert(JSON.stringify(obj)); // do something useful instead of alerting
+  },
+  function(msg) {
+    alert('error: ' + msg);
+  }
+);

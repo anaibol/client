@@ -18,7 +18,6 @@
   "cordovaPlugins": [
     "org.apache.cordova.dialogs",
     "org.apache.cordova.file",
-<<<<<<< HEAD
     "org.apache.cordova.media",
     {
       "id": "com.phonegap.plugins.facebookconnect",
@@ -26,8 +25,3 @@
     }
   ]
 }
-=======
-    "org.apache.cordova.media"
-  ]
-}
->>>>>>> ca8bfe93afc49dc469bec77cd5ef82de383f28ff
