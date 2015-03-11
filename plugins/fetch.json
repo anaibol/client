@@ -50,5 +50,12 @@
             "url": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
             "subdir": "."
         }
+    },
+    "nl.x-services.plugins.socialsharing": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+            "subdir": "."
+        }
     }
 }

@@ -79,6 +79,10 @@
                         {
                             "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -88,7 +92,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
@@ -242,6 +246,9 @@
             "PACKAGE_NAME": "com.ionicframework.quesale194407"
         },
         "nl.x-services.plugins.calendar": {
+            "PACKAGE_NAME": "com.ionicframework.quesale194407"
+        },
+        "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.quesale194407"
         }
     },

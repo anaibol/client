@@ -244,6 +244,13 @@ module.exports = [
     {
         "file": "plugins/nl.x-services.plugins.calendar/test/tests.js",
         "id": "nl.x-services.plugins.calendar.tests"
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -263,6 +270,7 @@ module.exports.metadata =
     "org.apache.cordova.splashscreen": "1.0.0",
     "com.plugin.datepicker": "0.5.0",
     "nl.x-services.plugins.calendar": "4.2.9",
+    "nl.x-services.plugins.socialsharing": "4.3.15",
     "android.support.v4": "21.0.1",
     "com.google.playservices": "21.0.0"
 }
