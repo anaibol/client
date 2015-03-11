@@ -71,6 +71,14 @@
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -134,6 +142,14 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.USE_CREDENTIALS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_CALENDAR\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CALENDAR\" />",
                             "count": 1
                         }
                     ],
@@ -220,6 +236,12 @@
             "PACKAGE_NAME": "com.ionicframework.quesale194407"
         },
         "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.quesale194407"
+        },
+        "com.plugin.datepicker": {
+            "PACKAGE_NAME": "com.ionicframework.quesale194407"
+        },
+        "nl.x-services.plugins.calendar": {
             "PACKAGE_NAME": "com.ionicframework.quesale194407"
         }
     },

@@ -143,7 +143,7 @@
   
   
 
-      <preference name="loglevel" value="DEBUG" />
+              <preference name="loglevel" value="DEBUG" />
     <feature name="Keyboard">
         <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
@@ -198,4 +198,10 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="AutoHideSplashScreen" value="false" />
+    <feature name="DatePickerPlugin">
+        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin" />
+    </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
 </widget>

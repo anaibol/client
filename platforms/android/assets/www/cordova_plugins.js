@@ -226,6 +226,24 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/com.plugin.datepicker/www/android/DatePicker.js",
+        "id": "com.plugin.datepicker.DatePicker",
+        "clobbers": [
+            "datePicker"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.calendar/www/Calendar.js",
+        "id": "nl.x-services.plugins.calendar.Calendar",
+        "clobbers": [
+            "Calendar"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.calendar/test/tests.js",
+        "id": "nl.x-services.plugins.calendar.tests"
     }
 ];
 module.exports.metadata = 
@@ -243,6 +261,8 @@ module.exports.metadata =
     "nl.x-services.plugins.googleplus": "1.1.0",
     "org.apache.cordova.geolocation": "0.3.12",
     "org.apache.cordova.splashscreen": "1.0.0",
+    "com.plugin.datepicker": "0.5.0",
+    "nl.x-services.plugins.calendar": "4.2.9",
     "android.support.v4": "21.0.1",
     "com.google.playservices": "21.0.0"
 }
