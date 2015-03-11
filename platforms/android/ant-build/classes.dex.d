@@ -115,6 +115,16 @@
 /home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$20.class \
 /home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$25.class \
 /home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/file/FileUtils$23.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$6$1.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$7.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$5.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$4.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$5$1.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$1.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$6.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$3.class \
+/home/anaibol/client/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen$2.class \
 /home/anaibol/client/platforms/android/ant-build/classes/nl/xservices/plugins/GooglePlus$1.class \
 /home/anaibol/client/platforms/android/ant-build/classes/nl/xservices/plugins/GooglePlus.class \
 /home/anaibol/client/platforms/android/ant-build/classes/nl/xservices/plugins/Toast$1.class \

@@ -554,6 +554,7 @@
 /home/anaibol/client/platforms/android/assets/www/plugins/nl.x-services.plugins.toast \
 /home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
 /home/anaibol/client/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin \
+/home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
 /home/anaibol/client/platforms/android/assets/www/plugins/com.ionic.keyboard/www \
 /home/anaibol/client/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
 /home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.media/www \
@@ -597,6 +598,8 @@
 /home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android/notification.js \
 /home/anaibol/client/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www \
 /home/anaibol/client/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js \
+/home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \
+/home/anaibol/client/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www/splashscreen.js \
 /home/anaibol/client/platforms/android/assets/www/js/controllers.js \
 /home/anaibol/client/platforms/android/assets/www/js/app.js \
 /home/anaibol/client/platforms/android/assets/www/templates/search.html \

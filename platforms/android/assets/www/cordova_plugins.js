@@ -219,6 +219,13 @@ module.exports = [
         "clobbers": [
             "window.plugins.googleplus"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -234,6 +241,8 @@ module.exports.metadata =
     "nl.x-services.plugins.toast": "2.0.4",
     "com.phonegap.plugins.facebookconnect": "0.11.0",
     "nl.x-services.plugins.googleplus": "1.1.0",
+    "org.apache.cordova.geolocation": "0.3.12",
+    "org.apache.cordova.splashscreen": "1.0.0",
     "android.support.v4": "21.0.1",
     "com.google.playservices": "21.0.0"
 }
