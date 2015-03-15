@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ionic', 'ngCordova', 'querystring'])
+var app = angular.module('app', ['ionic', 'ngCordova', 'querystring', 'angularMoment'])
 
 app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window) {
   // $cordovaSplashscreen.show();
@@ -52,7 +52,24 @@ app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordova
   });
 });
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $cordovaFacebookProvider) {
+  // var appID = 755761764436101;
+  // var version = "v2.0"; // or leave blank and default is v2.0
+  // $cordovaFacebookProvider.browserInit(appID, version);
+
+
+  // var options = {
+  //   method: "feed",
+  //   link: "http://example.com",
+  //   caption: "Such caption, very feed."
+  // };
+  // $cordovaFacebook.showDialog(options)
+  //   .then(function(success) {
+  //     // success
+  //   }, function(error) {
+  //     // error
+  //   });
+
   $stateProvider
 
   // .state('app', {

@@ -1,4 +1,4 @@
-app.controller('ListCtrl', function($scope, $window, Event, evs) {
+app.controller('ListCtrl', function($scope, $window, Event, evs, $cordovaDatePicker) {
   if (!evs.length) {
     alert('no events');
   }
@@ -27,8 +27,24 @@ app.controller('ListCtrl', function($scope, $window, Event, evs) {
     });
   };
 
+  // $scope.openTag = function($event, ev) {
+  //   $event.stopPropagation();
+  // };
 
-  $scope.openTag = function($event, ev) {
-    $event.stopPropagation();
-  };
+  // var options = {
+  //   date: new Date(),
+  //   mode: 'date', // or 'time'
+  //   minDate: new Date() - 10000,
+  //   allowOldDates: true,
+  //   allowFutureDates: false,
+  //   doneButtonLabel: 'DONE',
+  //   doneButtonColor: '#F2F3F4',
+  //   cancelButtonLabel: 'CANCEL',
+  //   cancelButtonColor: '#000000'
+  // };
+
+  // $cordovaDatePicker.show(options).then(function(date) {
+  //   alert(date);
+  // });
+
 });
