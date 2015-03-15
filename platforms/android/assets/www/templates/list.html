@@ -1,4 +1,4 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="List">
 <!--   <ion-tabs class="tabs-positive tabs-icon-only">
     <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
     </ion-tab>
@@ -11,8 +11,8 @@
   </ion-tabs> -->
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
+      <ion-item ng-repeat="ev in evs" href="#/{{ev.eid}}">
+        {{ev.name}}
       </ion-item>
     </ion-list>
   </ion-content>

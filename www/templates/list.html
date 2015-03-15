@@ -1,0 +1,65 @@
+<div class="bar bar-header has-tabs-top bar-positive">
+  <div class="h1 title">Striped Style Tabs</div>
+</div>
+<ion-tabs class="tabs-top tabs-background-positive tabs-color-light">
+  <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+    <ion-view view-title="List">
+      <!-- <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+      <div class="tabs">
+        <a class="tab-item active" href="#">
+          <i class="icon ion-home"></i>
+          Test
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-star"></i>
+          Favorites
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-gear-a"></i>
+          Settings
+        </a>
+      </div>
+    </div>
+
+    <div class="tabs-striped tabs-color-assertive">
+      <div class="tabs">
+        <a class="tab-item active" href="#">
+          <i class="icon ion-home"></i>
+          Test
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-star"></i>
+          Favorites
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-gear-a"></i>
+          Settings
+        </a>
+      </div>
+    </div>
+     -->
+
+      <ion-content>
+        <div class="list">
+          <a class="item item-thumbnail-left" collection-repeat="ev in evs" href="#/{{ev.eid}}">
+            <img src="{{ev.pic_cover.source}}">
+            <h2>{{ev.name}}</h2>
+            <p>{{ev.description}}</p>
+
+<!--             <div class="item item-divider">
+              <span>{{ev.start_time | amDateFormat:"LT"}}</span>
+            </div> -->
+            <i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span>
+          </a>
+        </div>
+      </ion-content>
+
+    </ion-view>
+  </ion-tab>
+
+  <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+  </ion-tab>
+
+  <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+  </ion-tab>
+</ion-tabs>

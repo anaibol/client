@@ -1,14 +1,30 @@
-// Ionic Starter App
+var app = angular.module('app', ['ionic', 'ngCordova', 'querystring'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
+app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window) {
+  // $cordovaSplashscreen.show();
 
-.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window) {
   $ionicPlatform.ready(function() {
 
+
+    // if (window.cordova.platformId == "browser") {
+    //   facebookConnectPlugin.browserInit(appId, version);
+    //   // version is optional. It refers to the version of API you may want to use.
+    // }
+
+    // facebookConnectPlugin.login([], function(data) {
+    //   console.log(data)
+    // }, function(err) {
+    //   console.log(err)
+    // });
+
+    // window.plugins.googleplus.login({},
+    //   function(obj) {
+    //     console.log(JSON.stringify(obj)); // do something useful instead of alerting
+    //   },
+    //   function(msg) {
+    //     console.log('error: ' + msg);
+    //   }
+    // );
 
     // $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
     //   alert(123);
@@ -34,75 +50,103 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     //   }
     // });
   });
-})
+});
 
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
+  // .state('app', {
+  //   url: "/app",
+  //   abstract: true,
+  //   templateUrl: "templates/menu.html",
+  //   controller: 'AppCtrl'
+  // })
 
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
+  // .state('app.search', {
+  //   url: "/search",
+  //   views: {
+  //     'menuContent': {
+  //       templateUrl: "templates/search.html"
+  //     }
+  //   }
+  // })
+
+  // .state('app.browse', {
+  //   url: "/browse",
+  //   views: {
+  //     'menuContent': {
+  //       templateUrl: "templates/browse.html"
+  //     }
+  //   }
+  // })
+  //   .state('app.playlists', {
+  //     url: "/playlists",
+  //     views: {
+  //       'menuContent': {
+  //         templateUrl: "templates/playlists.html",
+  //         controller: 'PlaylistsCtrl'
+  //       }
+  //     }
+  //   })
+
+  // .state('app.single', {
+  //   url: "/playlists/:playlistId",
+  //   views: {
+  //     'menuContent': {
+  //       templateUrl: "templates/playlist.html",
+  //       controller: 'PlaylistCtrl'
+  //     }
+  //   }
+  // });
+  .state('list', {
+    // url: '{city}{slash:[/]?}{tag:[^0-9]}',
+    // url: '/{city}',
+    // url: '/{city}{slash:[/]?}{tag}',
+    // url: '/:city?since?tags?sortBy',
+    url: '/',
+    // views: {
+    //   'menuContent': {
+    //     templateUrl: "templates/search.html"
+    //   },
+    // views: {
+    //   'menuContent': {
+    //     templateUrl: "templates/list.html",
+    //     controller: 'ListCtrl'
+    //   }
+    // },
+    templateUrl: "templates/list.html",
+    controller: 'ListCtrl',
+    resolve: {
+      evs: function(Event, $stateParams) {
+        return Event.get($stateParams);
       }
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+
+  // .state('app.search', {
+  //   url: "/search",
+  //   views: {
+  //     'menuContent': {
+  //       templateUrl: "templates/search.html"
+  //     }
+  //   }
+  // })
+
+  // .state('list.view', {
+  //   url: '/:slug/:eid',
+  //   templateUrl: "templates/view.html",
+  //   controller: 'ViewCtrl',
+  //   parent: 'list',
+  //   resolve: {
+  //     ev: function(Event, $stateParams) {
+  //       return Event.getOne($stateParams.eid);
+  //     }
+  //   }
+  // });
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/');
 });
-
-
-if (window.cordova.platformId == "browser") {
-  facebookConnectPlugin.browserInit(appId, version);
-  // version is optional. It refers to the version of API you may want to use.
-}
-
-facebookConnectPlugin.login([], function(data) {
-  console.log(data)
-}, function(err) {
-  console.log(err)
-});
-
-window.plugins.googleplus.login({},
-  function(obj) {
-    console.log(JSON.stringify(obj)); // do something useful instead of alerting
-  },
-  function(msg) {
-    console.log('error: ' + msg);
-  }
-);
