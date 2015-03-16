@@ -1,10 +1,23 @@
 var app = angular.module('app', ['ionic', 'ngCordova', 'querystring', 'angularMoment'])
 
-app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window) {
-  // $cordovaSplashscreen.show();
-
+app.run(function($ionicPlatform, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window, $cordovaGeolocation) {
   $ionicPlatform.ready(function() {
 
+
+    var posOptions = {
+      timeout: 10000,
+      enableHighAccuracy: false
+    };
+    console.log(123);
+    $cordovaGeolocation
+      .getCurrentPosition(posOptions)
+      .then(function(position) {
+        console.log(position);
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+      }, function(err) {
+        console.log(err);
+      });
 
     // if (window.cordova.platformId == "browser") {
     //   facebookConnectPlugin.browserInit(appId, version);
@@ -52,7 +65,10 @@ app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordova
   });
 });
 
-app.config(function($stateProvider, $urlRouterProvider, $cordovaFacebookProvider) {
+app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $cordovaFacebookProvider) {
+
+  $ionicConfigProvider.views.forwardCache(true);
+
   // var appID = 755761764436101;
   // var version = "v2.0"; // or leave blank and default is v2.0
   // $cordovaFacebookProvider.browserInit(appID, version);
@@ -151,17 +167,17 @@ app.config(function($stateProvider, $urlRouterProvider, $cordovaFacebookProvider
   //   }
   // })
 
-  // .state('list.view', {
-  //   url: '/:slug/:eid',
-  //   templateUrl: "templates/view.html",
-  //   controller: 'ViewCtrl',
-  //   parent: 'list',
-  //   resolve: {
-  //     ev: function(Event, $stateParams) {
-  //       return Event.getOne($stateParams.eid);
-  //     }
-  //   }
-  // });
+  .state('view', {
+    url: '/:eid',
+    templateUrl: "templates/view.html",
+    controller: 'ViewCtrl',
+    resolve: {
+      ev: function(Event, $stateParams) {
+        console.log($stateParams);
+        return Event.getOne($stateParams.eid);
+      }
+    }
+  });
 
 
   // if none of the above states are matched, use this as the fallback

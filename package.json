@@ -31,7 +31,7 @@
       "id": "com.phonegap.plugins.facebookconnect",
       "locator": "../phonegap-facebook-plugin"
     },
-    "org.apache.cordova.geolocation",
-    "org.apache.cordova.splashscreen"
+    "org.apache.cordova.splashscreen",
+    "org.apache.cordova.geolocation"
   ]
 }

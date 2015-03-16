@@ -1,10 +1,52 @@
-var app = angular.module('app', ['ionic', 'ngCordova', 'querystring', 'angularMoment'])
+angular.module('ionic.utils', [])
 
-app.run(function($ionicPlatform, $cordovaSplashscreen, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window) {
-  // $cordovaSplashscreen.show();
+.factory('$localstorage', ['$window',
+  function($window) {
+    return {
+      set: function(key, value) {
+        $window.localStorage[key] = value;
+      },
+      get: function(key, defaultValue) {
+        return $window.localStorage[key] || defaultValue;
+      },
+      setObject: function(key, value) {
+        $window.localStorage[key] = JSON.stringify(value);
+      },
+      getObject: function(key) {
+        return JSON.parse($window.localStorage[key] || '{}');
+      }
+    }
+  }
+]);
 
+var app = angular.module('app', ['ionic', 'ionic.utils', 'ngCordova', 'querystring', 'angularMoment'])
+
+app.run(function($ionicPlatform, $cordovaDialogs, $cordovaToast, $cordovaPush, $rootScope, $window, $cordovaGeolocation, $localstorage) {
   $ionicPlatform.ready(function() {
 
+    var location = $localstorage.get('location');
+
+    if (!location) {
+      var posOptions = {
+        timeout: 10000,
+        enableHighAccuracy: false
+      };
+      console.log(123);
+      $cordovaGeolocation
+        .getCurrentPosition(posOptions)
+        .then(function(position) {
+          // console.log(position);
+          // var lat = position.coords.latitude
+          // var long = position.coords.longitude
+          $localstorage.set('location', JSON.stringify(position.coords));
+          location = position.coords;
+
+        }, function(err) {
+          console.log(err);
+        });
+    } else {
+      console.log(JSON.parse(location));
+    }
 
     // if (window.cordova.platformId == "browser") {
     //   facebookConnectPlugin.browserInit(appId, version);

@@ -8,7 +8,11 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       var deferred = $q.defer();
 
-      $http.get('/api/events/' + eid).success(function(ev) {
+      // $http.get('/api/events/' + eid).success(function(ev) {
+      //   ev = that.normalize(ev);
+      //   deferred.resolve(ev);
+      // });
+      $http.get('/ev.json').success(function(ev) {
         ev = that.normalize(ev);
         deferred.resolve(ev);
       });
@@ -69,22 +73,11 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       ev.tags = _.uniq(ev.tags);
 
-      // ev.start_time = this.parseDate(ev.start_time, ev.timezone);
-      // ev.end_time = this.parseDate(ev.end_time, ev.timezone);
-      // ev.update_time = this.parseDate(ev.update_time, ev.timezone);
-
       ev.start_time = new Date(ev.start_time);
       ev.end_time = new Date(ev.end_time);
       ev.update_time = new Date(ev.update_time);
 
       return ev;
-    },
-    parseDate: function(date, tz) {
-      if (!tz) {
-        return date;
-      }
-      var parsed = moment(date).tz(tz).format("YYYY/MM/DD hh:mm A");
-      return new Date(parsed);
     },
     runQuery: function() {
       var that = this;
