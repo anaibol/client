@@ -50,6 +50,18 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="HttpRequest">
+        <param name="android-package" value="plugin.http.request.HttpRequest" />
+    </feature>
+    <feature name="GoogleMaps">
+        <param name="android-package" value="plugin.google.maps.GoogleMaps" />
+    </feature>
+    <feature name="External">
+        <param name="android-package" value="plugin.google.maps.External" />
+    </feature>
+    <feature name="Geocoder">
+        <param name="android-package" value="plugin.google.maps.MyGeocoder" />
+    </feature>
     <splash density="land-ldpi" src="resources/android/splash/splash.png" />
     <splash density="land-mdpi" src="resources/android/splash/splash.png" />
     <splash density="land-hdpi" src="resources/android/splash/splash.png" />
@@ -63,7 +75,7 @@
     <author email="hi@ionicframework" href="http://ionicframework.com/">
       Ionic Framework Team
     </author>
-    <content original-src="index.html" src="http://192.168.0.5:8100" />
+    <content original-src="index.html" src="http://192.168.56.1:8100" />
     <access origin="*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />

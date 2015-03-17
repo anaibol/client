@@ -32,6 +32,7 @@
       "locator": "../phonegap-facebook-plugin"
     },
     "org.apache.cordova.splashscreen",
-    "org.apache.cordova.geolocation"
+    "org.apache.cordova.geolocation",
+    "plugin.google.maps"
   ]
 }

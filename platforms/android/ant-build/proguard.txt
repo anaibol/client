@@ -1,18 +1,18 @@
-# view AndroidManifest.xml #generated:22
+# view AndroidManifest.xml #generated:21
 -keep class com.facebook.LoginActivity { <init>(...); }
 
 # view res/layout/com_facebook_usersettingsfragment.xml #generated:48
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
-# view AndroidManifest.xml #generated:6
+# view AndroidManifest.xml #generated:5
 -keep class com.ionicframework.quesale194407.CordovaApp { <init>(...); }
 
-# view AndroidManifest.xml #generated:13
+# view AndroidManifest.xml #generated:12
 -keep class com.plugin.gcm.CordovaGCMBroadcastReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:20
+# view AndroidManifest.xml #generated:19
 -keep class com.plugin.gcm.GCMIntentService { <init>(...); }
 
-# view AndroidManifest.xml #generated:12
+# view AndroidManifest.xml #generated:11
 -keep class com.plugin.gcm.PushHandlerActivity { <init>(...); }
 
