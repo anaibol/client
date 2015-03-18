@@ -64,18 +64,18 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
         ReverseGeocode.getAddress(loc.lat, loc.lon).success(function(address) {
           console.log(address);
 
-          // Event.query.lng = loc.lng;
-          // Event.query.lat = loc.lat;
+          Event.query.lng = loc.lng;
+          Event.query.lat = loc.lat;
 
 
-          // $rootScope.loc = {
-          //   city: loc.region,
-          //   lng: loc.lng,
-          //   lat: loc.lat
-          // }
+          $rootScope.loc = {
+            city: loc.region,
+            lng: loc.lng,
+            lat: loc.lat
+          };
 
-          // LocalStorage.setObj('loc', $rootScope.loc);
-          // console.log($rootScope.loc);
+          LocalStorage.setObj('loc', $rootScope.loc);
+          console.log($rootScope.loc);
 
         });
       });

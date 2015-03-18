@@ -1,29 +1,14 @@
 {
-    "nl.x-services.plugins.googleplus": {
+    "org.apache.cordova.dialogs": {
         "source": {
             "type": "registry",
-            "id": "nl.x-services.plugins.googleplus"
+            "id": "org.apache.cordova.dialogs"
         }
     },
-    "android.support.v4": {
+    "org.apache.cordova.media": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/MobileChromeApps/cordova-plugin-android-support-v4",
-            "subdir": "."
-        }
-    },
-    "com.google.playservices": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/MobileChromeApps/google-play-services",
-            "subdir": "."
-        }
-    },
-    "com.phonegap.plugins.facebookconnect": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Wizcorp/phonegap-facebook-plugin",
-            "subdir": "."
+            "type": "registry",
+            "id": "org.apache.cordova.media"
         }
     },
     "org.apache.cordova.geolocation": {
@@ -32,43 +17,22 @@
             "id": "org.apache.cordova.geolocation"
         }
     },
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.file"
+        }
+    },
     "org.apache.cordova.splashscreen": {
         "source": {
             "type": "registry",
             "id": "org.apache.cordova.splashscreen"
         }
     },
-    "com.plugin.datepicker": {
-        "source": {
-            "type": "git",
-            "url": "http://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
-            "subdir": "."
-        }
-    },
-    "nl.x-services.plugins.calendar": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
-            "subdir": "."
-        }
-    },
-    "nl.x-services.plugins.socialsharing": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
-            "subdir": "."
-        }
-    },
     "plugin.google.maps": {
         "source": {
             "type": "registry",
             "id": "plugin.google.maps"
-        }
-    },
-    "plugin.http.request": {
-        "source": {
-            "type": "registry",
-            "id": "plugin.http.request"
         }
     }
 }

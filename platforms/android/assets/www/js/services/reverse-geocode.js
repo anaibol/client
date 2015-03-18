@@ -1,9 +1,9 @@
-app.service('ReverseGeocode', function() {
+app.service('ReverseGeocode', function($http) {
   // https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&location_type=ROOFTOP&result_type=street_address&key=API_KEY
 
   return {
     getAddress: function(lat, lng) {
-      return $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng + '&location_type=ROOFTOP&result_type=street_address&key=AIzaSyCXNnoeEVyQq39OBD0SF3KOxU3uuG54doU');
+      return $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng + '&region=ar&language=es&key=AIzaSyCXNnoeEVyQq39OBD0SF3KOxU3uuG54doU');
     }
   };
 

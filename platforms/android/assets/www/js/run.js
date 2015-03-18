@@ -61,22 +61,23 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
       GeoIp.getLocation().success(function(loc) {
         console.log(loc);
 
-        ReverseGeocode.getAddress(loc.lat, loc.lng, function(address) {
+        ReverseGeocode.getAddress(loc.lat, loc.lon).success(function(address) {
           console.log(address);
+
+          Event.query.lng = loc.lng;
+          Event.query.lat = loc.lat;
+
+
+          $rootScope.loc = {
+            city: loc.region,
+            lng: loc.lng,
+            lat: loc.lat
+          };
+
+          LocalStorage.setObj('loc', $rootScope.loc);
+          console.log($rootScope.loc);
+
         });
-
-        // Event.query.lng = loc.lng;
-        // Event.query.lat = loc.lat;
-
-
-        // $rootScope.loc = {
-        //   city: loc.region,
-        //   lng: loc.lng,
-        //   lat: loc.lat
-        // }
-
-        // LocalStorage.setObj('loc', $rootScope.loc);
-        // console.log($rootScope.loc);
       });
     }
 
