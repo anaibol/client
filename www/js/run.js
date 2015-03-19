@@ -82,6 +82,14 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
     }
 
 
+    // $rootScope.$on('$stateChangeSuccess', function(fromState, toState) {
+    //   console.log(toState);
+    //   if (toState.name.indexOf('events.list') !== -1) {
+    //     $ionicNavBarDelegate.showBackButton(true);
+    //   }
+
+    // });
+
     // if (window.cordova.platformId == "browser") {
     //   facebookConnectPlugin.browserInit(appId, version);
     //   // version is optional. It refers to the version of API you may want to use.

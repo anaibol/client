@@ -22,99 +22,42 @@ app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $c
   //   });
 
   $stateProvider
-
-  // .state('app', {
-  //   url: "/app",
-  //   abstract: true,
-  //   templateUrl: "templates/menu.html",
-  //   controller: 'AppCtrl'
-  // })
-
-  // .state('app.search', {
-  //   url: "/search",
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: "templates/search.html"
-  //     }
-  //   }
-  // })
-
-  // .state('app.browse', {
-  //   url: "/browse",
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: "templates/browse.html"
-  //     }
-  //   }
-  // })
-  //   .state('app.playlists', {
-  //     url: "/playlists",
-  //     views: {
-  //       'menuContent': {
-  //         templateUrl: "templates/playlists.html",
-  //         controller: 'PlaylistsCtrl'
-  //       }
-  //     }
-  //   })
-
-  // .state('app.single', {
-  //   url: "/playlists/:playlistId",
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: "templates/playlist.html",
-  //       controller: 'PlaylistCtrl'
-  //     }
-  //   }
-  // });
-  .state('list', {
-    // url: '{city}{slash:[/]?}{tag:[^0-9]}',
-    // url: '/{city}',
-    // url: '/{city}{slash:[/]?}{tag}',
-    // url: '/:city?since?tags?sortBy',
-    url: '/',
-    // views: {
-    //   'menuContent': {
-    //     templateUrl: "templates/search.html"
-    //   },
-    // views: {
-    //   'menuContent': {
-    //     templateUrl: "templates/list.html",
-    //     controller: 'ListCtrl'
-    //   }
-    // },
-    templateUrl: "templates/list.html",
-    controller: 'ListCtrl',
-    resolve: {
-      evs: function(Event, $stateParams) {
-        return Event.get($stateParams);
+    .state('events', {
+      url: "/events",
+      abstract: true,
+      templateUrl: "templates/events.html"
+    })
+    .state('events.list', {
+      url: "",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/list.html",
+          controller: 'ListCtrl',
+          resolve: {
+            evs: function(Event, $stateParams) {
+              return Event.get($stateParams);
+            }
+          }
+        }
       }
-    }
-  })
-
-
-
-  // .state('app.search', {
-  //   url: "/search",
-  //   views: {
-  //     'menuContent': {
-  //       templateUrl: "templates/search.html"
-  //     }
-  //   }
-  // })
-
-  .state('view', {
-    url: '/:eid',
-    templateUrl: "templates/view.html",
-    controller: 'ViewCtrl',
-    resolve: {
-      ev: function(Event, $stateParams) {
-        console.log($stateParams);
-        return Event.getOne($stateParams.eid);
+    })
+    .state('events.view', {
+      url: "/:eid",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/view.html",
+          controller: 'ViewCtrl',
+          resolve: {
+            ev: function(Event, $stateParams) {
+              console.log($stateParams);
+              return Event.getOne($stateParams.eid);
+            }
+          }
+        }
       }
-    }
-  });
+    });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/events');
 });

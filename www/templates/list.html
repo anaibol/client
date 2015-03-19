@@ -1,7 +1,7 @@
-<ion-view view-title="Hoy, Martes 15">
+<ion-view>
   <ion-content>
     <div class="list">
-      <a class="item item-thumbnail-left" collection-repeat="ev in evs" ui-sref="view({eid:ev.eid})">
+      <a class="item item-thumbnail-left" collection-repeat="ev in evs" ui-sref="events.view({eid: ev.eid})">
         <img src="{{ev.pic_cover.source}}">
         <h2>{{ev.name}}</h2>
         <p class="description">{{ev.description}}</p>
