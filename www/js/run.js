@@ -120,7 +120,7 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
     };
 
     // BackgroundGeoLocation is highly configurable.
-    $cordovaBackgroundGeolocation.configure.then(
+    $cordovaBackgroundGeolocation.configure(options).then(
       null, // Background never resolves
       function(err) { // error callback
         console.error(err);
@@ -154,7 +154,7 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
     //   // version is optional. It refers to the version of API you may want to use.
     // }
 
-    // facebookConnectPlugin.login([], function(data) {
+    // $cordovaFacebook.login([], function(data) {
     //   console.log(data)
     // }, function(err) {
     //   console.log(err)
