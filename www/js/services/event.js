@@ -1,43 +1,63 @@
 app.factory('Event', function($q, $http, $rootScope, $querystring) {
-  var query = {};
+  function getStringDate(aDate) {
+    var dd = aDate;
+    var yy = dd.getYear();
+    var mm = dd.getMonth() + 1;
+    dd = dd.getDate();
+    if (yy < 2000) {
+      yy += 1900;
+    }
+    if (mm < 10) {
+      mm = "0" + mm;
+    }
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+    var rs = yy + "-" + mm + "-" + dd;
+    return rs;
+  }
+
+  _.mixin({
+    compactObject: function(o) {
+      var clone = _.clone(o);
+      _.each(clone, function(v, k) {
+        if (!v) {
+          delete clone[k];
+        }
+      });
+      return clone;
+    }
+  });
 
   return {
-    query: query,
+    // query: {},
     getOne: function(eid) {
       var that = this;
 
       var deferred = $q.defer();
 
-      // $http.get('/api/events/' + eid).success(function(ev) {
-      //   ev = that.normalize(ev);
-      //   deferred.resolve(ev);
-      // });
-      $http.get('/ev.json').success(function(ev) {
+      $http.get('http://192.168.56.1:3000/api/events/' + eid).success(function(ev) {
         ev = that.normalize(ev);
         deferred.resolve(ev);
       });
+      // $http.get('/ev.json').success(function(ev) {
+      //   ev = that.normalize(ev);
+      //   deferred.resolve(ev);
+      // });
 
       return deferred.promise;
     },
     get: function(params) {
-      // query = {
-      //   since: params.since || getStringDate($rootScope.today),
-      //   country: params.country || query.country,
-      //   lng: $rootScope.loc.lng || query.lng,
-      //   lat: $rootScope.loc.lat || query.lat,
-      //   tags: params.tags || query.tags,
-      //   sortBy: params.sortBy || query.sortBy
-      // };
+      query = {
+        since: params.since || getStringDate($rootScope.today),
+        city: params.country || $rootScope.loc.city,
+        lng: params.lng || $rootScope.loc.lng,
+        lat: params.lat || $rootScope.loc.lat,
+        // tags: params.tags || query.tags,
+        // sortBy: params.sortBy || query.sortBy
+      };
 
-      // /api/events?since=2015-03-14&lng=-58.3815931&lat=-34.6037232
-
-      // query.since = '2015-03-14';
-      // query.lng: -58.3815931;
-      // query.lat: -34.6037232;
-
-
-      // console.log(query);
-      return this.runQuery();
+      return this.runQuery(query);
     },
     getMore: function() {
       var limit;
@@ -79,13 +99,13 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       return ev;
     },
-    runQuery: function() {
+    runQuery: function(query) {
       var that = this;
       var deferred = $q.defer();
 
-      $http.get('/evs.json').success(function(evs) {
+      // $http.get('/evs.json').success(function(evs) {
 
-        // $http.get(' / api / events ? ' + $querystring.toString(_.compactObject(query))).success(function(evs) {
+      $http.get('http://192.168.56.1:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
         var ev = {};
 
         for (var i = evs.length - 1; i >= 0; i--) {

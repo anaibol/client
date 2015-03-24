@@ -29,11 +29,13 @@
     "org.apache.cordova.file",
     "org.apache.cordova.media",
     "org.apache.cordova.splashscreen",
-    "org.apache.cordova.geolocation", {
+    "org.apache.cordova.geolocation",
+    {
       "id": "com.phonegap.plugins.facebookconnect",
       "locator": "../phonegap-facebook-plugin"
     },
     "plugin.google.maps",
-    "nl.x-services.plugins.googleplus"
+    "nl.x-services.plugins.googleplus",
+    "nl.x-services.plugins.socialsharing"
   ]
 }
