@@ -36,7 +36,7 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       var deferred = $q.defer();
 
-      $http.get('http://192.168.56.1:3000/api/events/' + eid).success(function(ev) {
+      $http.get('http://famosas.tv:3000/api/events/' + eid).success(function(ev) {
         ev = that.normalize(ev);
         deferred.resolve(ev);
       });
@@ -50,7 +50,7 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
     get: function(params) {
       query = {
         since: params.since || getStringDate($rootScope.today),
-        city: params.country || $rootScope.loc.city,
+        // city: params.country || $rootScope.loc.city,
         lng: params.lng || $rootScope.loc.lng,
         lat: params.lat || $rootScope.loc.lat,
         // tags: params.tags || query.tags,
@@ -105,7 +105,7 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       // $http.get('/evs.json').success(function(evs) {
 
-      $http.get('http://192.168.56.1:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
+      $http.get('http://famosas.tv:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
         var ev = {};
 
         for (var i = evs.length - 1; i >= 0; i--) {

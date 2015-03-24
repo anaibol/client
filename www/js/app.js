@@ -49,7 +49,6 @@ app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $c
           controller: 'ViewCtrl',
           resolve: {
             ev: function(Event, $stateParams) {
-              console.log($stateParams);
               return Event.getOne($stateParams.eid);
             }
           }

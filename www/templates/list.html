@@ -10,6 +10,7 @@
             <span>{{ev.start_time | amDateFormat:"LT"}}</span>
           </div> -->
         <i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span>
+        <i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span>
       </a>
     </div>
   </ion-content>

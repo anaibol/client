@@ -1,7 +1,7 @@
 app.controller('ViewCtrl', function(ev, $scope, $rootScope, $state, $stateParams, $http) {
   // Instagram, ev, fbphoto, fbvideos, $templateCache, $window
   $scope.ev = ev;
-
+  console.log(ev);
   $scope.descriptionOpened = false;
   if ($scope.ev.price.edited) {
     $scope.ev.price.full = $scope.ev.price.edited;

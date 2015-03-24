@@ -22,30 +22,30 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
   $rootScope.isMobile = $window.isMobile;
 
   $rootScope.loc = LocalStorage.getObj('loc');
-  console.log(1);
-  if (!$rootScope.loc) {
-    GeoIp.getLocation().success(function(loc) {
-      // console.log(loc);
 
-      ReverseGeocode.getAddress(loc.lat, loc.lon).success(function(address) {
-        // console.log(address);
+  // if (!$rootScope.loc) {
+  GeoIp.getLocation().success(function(loc) {
+    // console.log(loc);
 
-        Event.query.lng = loc.lng;
-        Event.query.lat = loc.lat;
+    // ReverseGeocode.getAddress(loc.lat, loc.lon).success(function(address) {
+    // console.log(address);
+
+    // Event.query.lat = loc.lat;
+    // Event.query.lng = loc.lng;
 
 
-        $rootScope.loc = {
-          city: loc.region,
-          lng: loc.lng,
-          lat: loc.lat
-        };
+    $rootScope.loc = {
+      city: loc.city,
+      lng: loc.lon,
+      lat: loc.lat
+    };
 
-        LocalStorage.setObj('loc', $rootScope.loc);
-        // console.log($rootScope.loc);
+    LocalStorage.setObj('loc', $rootScope.loc);
+    console.log($rootScope.loc);
 
-      });
-    });
-  }
+    // });
+  });
+  // }
   $ionicPlatform.ready(function() {
 
     // if (!location) {
@@ -161,28 +161,28 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
     //   }
     // );
 
-    $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
-      alert(123);
-      switch (notification.event) {
-        case 'registered':
-          if (notification.regid.length > 0) {
-            alert('registration ID = ' + notification.regid);
-          }
-          break;
+    // $rootScope.$on('$cordovaPush:notificationReceived', function(event, notification) {
+    //   alert(123);
+    //   switch (notification.event) {
+    //     case 'registered':
+    //       if (notification.regid.length > 0) {
+    //         alert('registration ID = ' + notification.regid);
+    //       }
+    //       break;
 
-        case 'message':
-          // this is the actual push notification. its format depends on the data model from the push server
-          alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
-          break;
+    //     case 'message':
+    //       // this is the actual push notification. its format depends on the data model from the push server
+    //       alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+    //       break;
 
-        case 'error':
-          alert('GCM error = ' + notification.msg);
-          break;
+    //     case 'error':
+    //       alert('GCM error = ' + notification.msg);
+    //       break;
 
-        default:
-          alert('An unknown GCM event has occurred');
-          break;
-      }
-    });
+    //     default:
+    //       alert('An unknown GCM event has occurred');
+    //       break;
+    //   }
+    // });
   });
 });
