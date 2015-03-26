@@ -12,5 +12,5 @@ app.factory('LocalStorage', function($window) {
     getObj: function(key) {
       return JSON.parse($window.localStorage[key] || '{}');
     }
-  }
+  };
 });

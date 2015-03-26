@@ -1,16 +1,24 @@
 <ion-view>
+  <ion-nav-buttons side="primary">
+    <button class="button" ng-click="doSomething()">
+      I'm a button on the primary of the navbar!
+    </button>
+  </ion-nav-buttons>
   <ion-content class="padding">
-    <h1>{{ev.name}}</h1>
-
-    <div class="list card">
+    <div class="card">
 
       <div class="item item-avatar">
-        <img src="mcfly.jpg">
-        <h2>Marty McFly</h2>
-        <p>November 05, 1955</p>
+        <img src="{{ev.pic_cover.source}}">
+        <h2>{{ev.name}}</h2>
+        <p><i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span></p>
+        <p><i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span></p>
+         <button class="icon ion-social-whatsapp" ng-click="$rootScope.share('', 'message', 'image', 'link'"></button>
+         <button class="icon ion-social-facebook" ng-click="$rootScope.share('', 'message', 'image', 'link'"></button>
+         <button class="icon ion-android-share" ng-click="$rootScope.share('', 'message', 'image', 'link')"></button>
       </div>
 
       <div class="item item-body">
+
         <img class="full-image" src="{{ev.pic_cover.source}}">
         <p ng-bind-html="ev.description"></p>
         <p>
@@ -29,7 +37,7 @@
           Comment
         </a>
         <a class="tab-item" href="#">
-          <i class="icon ion-share"></i>
+          <i class="icon ion-android-share"></i>
           Share
         </a>
       </div>

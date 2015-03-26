@@ -1,4 +1,4 @@
-app.service('Slug', function() {
+app.factory('Slug', function() {
   return {
     slugify: function(str) {
       str = str.replace(/^\s+|\s+$/g, ''); // trim

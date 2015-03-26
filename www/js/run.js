@@ -1,4 +1,6 @@
-app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cordovaDialogs, $cordovaToast, $cordovaPush, $cordovaGeolocation, $cordovaBackgroundGeolocation, LocalStorage, amMoment, GeoIp, Event, ReverseGeocode) {
+app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cordovaDialogs, $cordovaToast, $cordovaPush, $cordovaGeolocation, $cordovaBackgroundGeolocation, LocalStorage, amMoment, GeoIp, Event, ReverseGeocode, Share) {
+
+  $rootScope.Share = Share;
 
   var location = LocalStorage.get('location');
 

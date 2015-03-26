@@ -1,4 +1,4 @@
-app.service('ReverseGeocode', function($http) {
+app.factory('ReverseGeocode', function($http) {
   // https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&location_type=ROOFTOP&result_type=street_address&key=API_KEY
 
   return {
