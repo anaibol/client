@@ -1,5 +1,6 @@
 app.factory('Share', function($cordovaSocialSharing) {
   return function(socialType, message, image, link) {
+
     if (socialType === 'fb') {
       $cordovaSocialSharing
         .shareViaFacebook('message', 'image', 'link')
@@ -16,7 +17,16 @@ app.factory('Share', function($cordovaSocialSharing) {
         }, function(err) {
           // An error occurred. Show a message to the user
         });
-      return str;
+
+    } else if (socialType === 'ma') {
+      $cordovaSocialSharing
+        .shareViaEmail('message', 'subject', 'toArr', 'bccArr', 'file')
+        .then(function(result) {
+          // Success!
+        }, function(err) {
+          // An error occurred. Show a message to the user
+        });
+
     } else {
       $cordovaSocialSharing
         .share('message', 'image', 'link')

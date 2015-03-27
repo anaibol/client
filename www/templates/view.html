@@ -12,9 +12,9 @@
         <h2>{{ev.name}}</h2>
         <p><i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span></p>
         <p><i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span></p>
-         <button class="icon ion-social-whatsapp" ng-click="$rootScope.share('', 'message', 'image', 'link'"></button>
-         <button class="icon ion-social-facebook" ng-click="$rootScope.share('', 'message', 'image', 'link'"></button>
-         <button class="icon ion-android-share" ng-click="$rootScope.share('', 'message', 'image', 'link')"></button>
+         <button class="icon ion-social-whatsapp" ng-click="$rootScope.Share('wa', 'message', 'image', 'link')"></button>
+         <button class="icon ion-social-facebook" ng-click="$rootScope.Share('fb', 'message', 'image', 'link')"></button>
+         <button class="icon ion-android-share" ng-click="$rootScope.Share('', 'message', 'image', 'link')"></button>
       </div>
 
       <div class="item item-body">
