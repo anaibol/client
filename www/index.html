@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' *">
   <title></title>
 
 
@@ -45,7 +46,7 @@
   <ion-nav-view></ion-nav-view>
 
   <div class="bar bar-header has-tabs-top bar-dark">
-    <div class="h1 title">Hoy, 15 de marzo en {{$rootScope.loc.city}}<i class="icon icon-right ion-chevron-down"></i>
+    <div class="h1 title">{{$root.today | amCalendar}} en {{$rootScope.loc.city}}<i class="icon icon-right ion-chevron-down"></i>
     </div>
   </div>
 
