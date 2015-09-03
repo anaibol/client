@@ -8,7 +8,7 @@
     <div class="card">
 
       <div class="item item-avatar">
-        <img src="{{ev.pic_cover.source}}">
+        <img src="{{ev.cover.source}}">
         <h2>{{ev.name}}</h2>
         <p><i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span></p>
         <p><i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span></p>

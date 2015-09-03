@@ -36,8 +36,8 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       var deferred = $q.defer();
 
-      // $http.get('http://famosas.tv:3000/api/events/' + eid).success(function(ev) {
-      $http.get('http://localhost:3000/api/events/' + eid).success(function(ev) {
+      $http.get('http://famosas.tv:3000/api/events/' + eid).success(function(ev) {
+      // $http.get('http://localhost:3000/api/events/' + eid).success(function(ev) {
         ev = that.normalize(ev);
         deferred.resolve(ev);
       });
@@ -108,9 +108,8 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       // $http.get('/evs.json').success(function(evs) {
 
-      // $http.get('http://famosas.tv:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
+      $http.get('http://famosas.tv:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
       // $http.get('http://localhost:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
-      $http.get('http://wooepa.com/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
         var ev = {};
 
         for (var i = evs.length - 1; i >= 0; i--) {

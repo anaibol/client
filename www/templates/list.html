@@ -2,7 +2,7 @@
   <ion-content overflow-scroll=”true”>
     <div class="list">
       <a class="item item-thumbnail-left" collection-repeat="ev in evs" ui-sref="events.view({eid: ev.eid})">
-        <img src="{{ev.pic_cover.source}}">
+        <img src="{{ev.picture.location}}">
         <h2>{{ev.name}}</h2>
         <p class="description">{{ev.description}}</p>
 
