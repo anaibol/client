@@ -36,8 +36,8 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       var deferred = $q.defer();
 
-      $http.get('http://famosas.tv:3000/api/events/' + eid).success(function(ev) {
-      // $http.get('http://localhost:3000/api/events/' + eid).success(function(ev) {
+      $http.get('http://famosas.tv:3001/api/events/' + eid).success(function(ev) {
+      // $http.get('http://localhost:3001/api/events/' + eid).success(function(ev) {
         ev = that.normalize(ev);
         deferred.resolve(ev);
       });
@@ -79,42 +79,42 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
 
       return this.runQuery();
     },
-    normalize: function(ev) {
-      if (ev.attending_count >= 99) {
-        ev.tags.push('popular');
-      }
+    // normalize: function(ev) {
+    //   if (ev.attending_count >= 99) {
+    //     ev.tags.push('popular');
+    //   }
 
-      if (ev.price) {
-        if (ev.price.num === 0) {
-          ev.tags.push('free');
-        }
-      }
+    //   if (ev.price) {
+    //     if (ev.price.num === 0) {
+    //       ev.tags.push('free');
+    //     }
+    //   }
 
-      if (ev.festival) {
-        ev.tags.push('festival');
-      }
+    //   if (ev.festival) {
+    //     ev.tags.push('festival');
+    //   }
 
-      ev.tags = _.uniq(ev.tags);
+    //   ev.tags = _.uniq(ev.tags);
 
-      ev.start_time = new Date(ev.start_time);
-      ev.end_time = new Date(ev.end_time);
-      ev.update_time = new Date(ev.update_time);
+    //   ev.start_time = new Date(ev.start_time);
+    //   ev.end_time = new Date(ev.end_time);
+    //   ev.update_time = new Date(ev.update_time);
 
-      return ev;
-    },
+    //   return ev;
+    // },
     runQuery: function(query) {
       var that = this;
       var deferred = $q.defer();
 
       // $http.get('/evs.json').success(function(evs) {
 
-      $http.get('http://famosas.tv:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
-      // $http.get('http://localhost:3000/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
+      $http.get('http://famosas.tv:3001/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
+      // $http.get('http://localhost:3001/api/events?' + $querystring.toString(_.compactObject(query))).success(function(evs) {
         var ev = {};
 
         for (var i = evs.length - 1; i >= 0; i--) {
           ev = evs[i];
-          ev = that.normalize(ev);
+          // ev = that.normalize(ev);
         }
 
         deferred.resolve(evs);

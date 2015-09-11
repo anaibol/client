@@ -25,7 +25,6 @@
   },
   "cordovaPlugins": [
     "org.apache.cordova.dialogs",
-    "org.apache.cordova.console",
     "org.apache.cordova.file",
     "org.apache.cordova.media",
     "org.apache.cordova.splashscreen",
@@ -34,10 +33,15 @@
       "id": "com.phonegap.plugins.facebookconnect",
       "locator": "../phonegap-facebook-plugin"
     },
-    "plugin.google.maps",
     "nl.x-services.plugins.googleplus",
     "nl.x-services.plugins.socialsharing",
-    "cordova-plugin-whitelist"
+    "cordova-plugin-whitelist",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-file",
+    "org.apache.cordova.contacts",
+    "org.apache.cordova.console",
+    "org.apache.cordova.globalization"
   ],
   "cordovaPlatforms": [
     "android"
