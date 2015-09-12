@@ -1,20 +1,19 @@
 <ion-view>
   <ion-content overflow-scroll="true">
-    <div class="card col col-50" collection-repeat="ev in evs" ui-sref="events.view({eid: ev.eid})">
+<!--     <div class="card col col-50" collection-repeat="ev in evs" ui-sref="events.view({eid: ev.eid})">
       <div class="item item-text-wrap">
         <img src="{{ev.cover.source}}">
         <h2>{{ev.name}}</h2>
         <p class="description">{{ev.description}}</p>
-
-        <!--             <div class="item item-divider">
+                    <div class="item item-divider">
             <span>{{ev.start_time | amDateFormat:"LT"}}</span>
-          </div> -->
+          </div>
         <i class="icon ion-clock"></i><span>{{ev.start_time | amDateFormat:"LT"}}</span>
         <i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span>
       </div>
     </div>
-
-<!--     <div class="list">
+ -->
+    <div class="list">
       <a class="item item-thumbnail-left" collection-repeat="ev in evs" ui-sref="events.view({eid: ev.eid})">
         <img src="{{ev.picture.location}}">
         <h2>{{ev.name}}</h2>
@@ -27,6 +26,6 @@
         <i class="icon ion-location"></i><span>{{::ev.location && ev.venue.street ? ev.location + ', ' + ev.venue.street : ''}}</span>
       </a>
     </div>
- -->  </ion-content>
+  </ion-content>
 
 </ion-view>

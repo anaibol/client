@@ -41,7 +41,8 @@
     "cordova-plugin-file",
     "org.apache.cordova.contacts",
     "org.apache.cordova.console",
-    "org.apache.cordova.globalization"
+    "org.apache.cordova.globalization",
+    "plugin.google.maps"
   ],
   "cordovaPlatforms": [
     "android"
