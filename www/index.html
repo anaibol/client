@@ -45,23 +45,26 @@
   </ion-nav-bar>
   <ion-nav-view></ion-nav-view>
 
-  <div class="bar bar-header has-tabs-top bar-dark">
-    <div class="h1 title">{{$root.today | amCalendar}} en {{$rootScope.loc.city}}<i class="icon icon-right ion-chevron-down"></i>
+  <div class="bar bar-header has-tabs-top">
+    <button class="button icon ion-star">Quesale</button>
+    <!-- <div class="h1 title">{{$root.today | amCalendar}} en {{$root.loc.city}} -->
+    <div class="h1 title">Hoy en {{$root.loc.city}}
     </div>
+    <button class="button icon icon-right ion-search"></button>
+    <button class="button icon icon-right ion-android-notifications"></button>
+    <button class="button icon icon-right ion-person"></button>
   </div>
 
-  <ion-tabs class="tabs-top tabs-background-dark tabs-color-light">
-    <ion-tab title="Home" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+  <ion-tabs class="tabs-top">
+    <ion-tab title="Home" icon-on="ion-clock" icon-off="ion-clock-outline">
       <ion-nav-view>
       </ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="About" icon-on="ion-ios-heart" icon-off="ion-ios-heart-outline">
+    <ion-tab title="About" icon-on="ion-heart" icon-off="ion-heart-outline">
     </ion-tab>
-
-    <ion-tab title="Settings" icon="ion-android-share">
+    <ion-tab title="Settings" icon="ion-location">
     </ion-tab>
-
   </ion-tabs>
   <div id="fb-root"></div>
 </body>

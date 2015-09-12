@@ -32,13 +32,13 @@ app.factory('Event', function($q, $http, $rootScope, $querystring) {
   return {
     // query: {},
     getOne: function(eid) {
-      var that = this;
+      // var that = this;
 
       var deferred = $q.defer();
 
       $http.get('http://famosas.tv:3001/api/events/' + eid).success(function(ev) {
       // $http.get('http://localhost:3001/api/events/' + eid).success(function(ev) {
-        ev = that.normalize(ev);
+        // ev = that.normalize(ev);
         deferred.resolve(ev);
       });
       // $http.get('/ev.json').success(function(ev) {

@@ -23,7 +23,7 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
 
   $rootScope.isMobile = $window.isMobile;
 
-  $rootScope.loc = LocalStorage.getObj('loc');
+  // $rootScope.loc = LocalStorage.getObj('loc');
 
   // if (!$rootScope.loc) {
   GeoIp.getLocation().success(function(loc) {
