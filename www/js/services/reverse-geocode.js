@@ -7,7 +7,7 @@ app.factory('ReverseGeocode', function($window, $http) {
   //   }
   // };
 
-
+  console.log($window.plugins);
   var geocoder = new plugin.google.maps.Geocoder();
 
   return {
@@ -17,7 +17,7 @@ app.factory('ReverseGeocode', function($window, $http) {
       geocoder.geocode({
         'latLng': latlng
       }, function(results, status) {
-        if (status == plugin.maps.GeocoderStatus.OK) {
+        if (status == $window.plugins.maps.GeocoderStatus.OK) {
           if (results[1]) {
             cb(results[1]);
           }
@@ -32,9 +32,9 @@ app.factory('ReverseGeocode', function($window, $http) {
   //   getAddress: function(lat, lng, cb) {
   //     console.log(123);
 
-  //     var geocoder = plugin.google.maps.Geocoder;
+  //     var geocoder = plugins.google.maps.Geocoder;
 
-  //     var latlng = plugin.google.maps.LatLng;
+  //     var latlng = plugins.google.maps.LatLng;
 
   //     geocoder.geocode({
   //       'latLng': lat + ',' + lng
@@ -42,7 +42,7 @@ app.factory('ReverseGeocode', function($window, $http) {
   //       //alert("Else loop1");
   //       console.log(results);
   //       console.log(status);
-  //       if (status == plugin.google.maps.GeocoderStatus.OK) {
+  //       if (status == plugins.google.maps.GeocoderStatus.OK) {
   //         if (results[0]) {
   //           var add = results[0].formatted_address;
   //           var value = add.split(",");

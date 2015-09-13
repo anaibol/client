@@ -17,7 +17,7 @@ app.factory('LocationProvider', function($cordovaGeolocation, ReverseGeocode) { 
           // console.log(position)
           // var lat = position.coords.latitude
           // var long = position.coords.longitude
-          LocalStorage.set('location', JSON.stringify(position.coords));
+          // LocalStorage.set('location', JSON.stringify(position.coords));
 
           // $rootScope.loc = {
           //   city: loc.city,
@@ -71,7 +71,7 @@ app.factory('LocationProvider', function($cordovaGeolocation, ReverseGeocode) { 
       // });
     // });
     // }
+    }
   }
-
 
 });
