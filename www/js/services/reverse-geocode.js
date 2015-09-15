@@ -1,4 +1,4 @@
-app.factory('ReverseGeocode', function($window, $http) {
+app.factory('ReverseGeocode', function($window, $http, $ionicPlatform) {
   // https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&location_type=ROOFTOP&result_type=street_address&key=API_KEY
 
   // return {
@@ -7,34 +7,36 @@ app.factory('ReverseGeocode', function($window, $http) {
   //   }
   // };
 
-  console.log($window.plugins);
-  var geocoder = new plugin.google.maps.Geocoder();
-
   return {
     getAddress: function(lat, lng, cb) {
-      var latlng = new plugin.google.maps.LatLng(lat, lng);
+      $ionicPlatform.ready(function() {
+        var geocoder = $window.plugin.google.maps.Geocoder;
 
-      geocoder.geocode({
-        'latLng': latlng
-      }, function(results, status) {
-        if (status == $window.plugins.maps.GeocoderStatus.OK) {
-          if (results[1]) {
-            cb(results[1]);
+
+        var latlng = new $window.plugin.google.maps.LatLng(lat, lng);
+
+        geocoder.geocode({
+          'latLng': latlng
+        }, function(results, status) {
+          if (status == $window.plugin.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              cb(results[1]);
+            }
+          } else {
+            element.text('Geocoder failed due to: ' + status);
           }
-        } else {
-          element.text('Geocoder failed due to: ' + status);
-        }
+        });
       });
     }
-  };
+  }
 
   // return {
   //   getAddress: function(lat, lng, cb) {
   //     console.log(123);
 
-  //     var geocoder = plugins.google.maps.Geocoder;
+  //     var geocoder = $window.plugins.google.maps.Geocoder;
 
-  //     var latlng = plugins.google.maps.LatLng;
+  //     var latlng = $window.plugins.google.maps.LatLng;
 
   //     geocoder.geocode({
   //       'latLng': lat + ',' + lng
@@ -42,7 +44,7 @@ app.factory('ReverseGeocode', function($window, $http) {
   //       //alert("Else loop1");
   //       console.log(results);
   //       console.log(status);
-  //       if (status == plugins.google.maps.GeocoderStatus.OK) {
+  //       if (status == $window.plugins.google.maps.GeocoderStatus.OK) {
   //         if (results[0]) {
   //           var add = results[0].formatted_address;
   //           var value = add.split(",");

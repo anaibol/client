@@ -1,4 +1,4 @@
-app.factory('LocationProvider', function($cordovaGeolocation, ReverseGeocode) { // LocalStorage
+app.factory('Location', function($cordovaGeolocation, ReverseGeocode) { // LocalStorage
 
   // $rootscope.loc = LocalStorage.get('location');
 
@@ -10,7 +10,7 @@ app.factory('LocationProvider', function($cordovaGeolocation, ReverseGeocode) { 
 
 
   return {
-    getAddress: function(lat, lng, cb) {
+    getAddress: function(cb) {
       $cordovaGeolocation
         .getCurrentPosition(posOptions)
         .then(function(position) {
@@ -25,9 +25,10 @@ app.factory('LocationProvider', function($cordovaGeolocation, ReverseGeocode) { 
           //   lat: position.coords.latitute
           // };
 
+          console.log(position);
           ReverseGeocode.getAddress(position.coords.latitute, position.coords.longitude, function(address) {
             $rootScope.address = address;
-            console.log($rootScope.address);
+            cb($rootScope.address);
           });
 
 

@@ -1,4 +1,4 @@
-app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cordovaPush, amMoment, GeoIp, Event, LocationProvider, Share) {
+app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cordovaPush, amMoment, GeoIp, Event, Location, Share) {
 
   $rootScope.Share = Share;
 
@@ -20,6 +20,10 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
   $rootScope.user = $window.user;
 
   $ionicPlatform.ready(function() {
+
+    Location.getAddress(function(loc) {
+      console.log(loc);
+    });
 
     // $rootScope.$on('$stateChangeSuccess', function(fromState, toState) {
     //   console.log(toState);
