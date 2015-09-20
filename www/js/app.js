@@ -34,9 +34,8 @@ app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $c
           templateUrl: "templates/list.html",
           controller: 'ListCtrl',
           resolve: {
-            evs: function(Event, $stateParams) {
-              return Event.get($stateParams);
-            }
+          evs: function(Event, $stateParams) {
+            return Event.get($stateParams);
           }
         }
       }

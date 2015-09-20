@@ -1,4 +1,4 @@
-app.factory('Location', function($cordovaGeolocation, ReverseGeocode) { // LocalStorage
+app.factory('Location', function($cordovaGeolocation, ReverseGeocode, GeoIp) { // LocalStorage
 
   // $rootscope.loc = LocalStorage.get('location');
 
@@ -11,12 +11,35 @@ app.factory('Location', function($cordovaGeolocation, ReverseGeocode) { // Local
 
   return {
     getAddress: function(cb) {
-      $cordovaGeolocation
-        .getCurrentPosition(posOptions)
-        .then(function(position) {
-          // console.log(position)
-          // var lat = position.coords.latitude
-          // var long = position.coords.longitude
+      navigator.geolocation.getCurrentPosition(function(position) {
+          // LocalStorage.set('location', JSON.stringify(position.coords));
+
+          var loc = {
+            city: 'paris',
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+          };
+
+          cb(loc);
+
+          // console.log(JSON.str1ingify(position));
+          // ReverseGeocode.getAddress(position.coords.latitute, position.coords.longitude, function(address) {
+          //   $rootScope.address = address;
+          //   cb($rootScope.address);
+          // });
+
+
+        }, function(err) {
+          console.log(JSON.stringify(err));
+        });
+
+      // $cordovaGeolocation
+      //   .getCurrentPosition(posOptions)
+      //   .then(function(position) {
+      //     console.log(444);
+      //     var lat = position.coords.latitude
+      //     var long = position.coords.longitude
+      //     console.log(lat);
           // LocalStorage.set('location', JSON.stringify(position.coords));
 
           // $rootScope.loc = {
@@ -25,16 +48,16 @@ app.factory('Location', function($cordovaGeolocation, ReverseGeocode) { // Local
           //   lat: position.coords.latitute
           // };
 
-          console.log(position);
-          ReverseGeocode.getAddress(position.coords.latitute, position.coords.longitude, function(address) {
-            $rootScope.address = address;
-            cb($rootScope.address);
-          });
+          // console.log(JSON.str1ingify(position));
+          // ReverseGeocode.getAddress(position.coords.latitute, position.coords.longitude, function(address) {
+          //   $rootScope.address = address;
+          //   cb($rootScope.address);
+          // });
 
 
-        }, function(err) {
-          console.log(err);
-        });
+        // }, function(err) {
+        //   console.log(JSON.stringify(err));
+        // });
 
       // geolocation.getLocation().then(function(data) {
       //   $rootScope.loc = {
@@ -50,27 +73,20 @@ app.factory('Location', function($cordovaGeolocation, ReverseGeocode) { // Local
 
 
     // if (!$rootScope.loc) {
-    // GeoIp.getLocation().success(function(loc) {
-      // console.log(loc);
+      // GeoIp.getLocation().success(function(loc) {
+      //   // ReverseGeocode.getAddress(loc.lat, loc.lon, function(address) {
+      //     console.log(JSON.stringify(loc));
+      //   var loc = {
+      //     city: loc.city,
+      //     lng: loc.lon,
+      //     lat: loc.lat
+      //   };
 
-      // ReverseGeocode.getAddress(loc.lat, loc.lon).success(function(address) {
-      // console.log(address);
+      //   // LocalStorage.setObj('loc', $rootScope.loc);
+      //   cb(loc);
 
-      // Event.query.lat = loc.lat;
-      // Event.query.lng = loc.lng;
-
-
-      // $rootScope.loc = {
-      //   city: loc.city,
-      //   lng: loc.lon,
-      //   lat: loc.lat
-      // };
-
-      // LocalStorage.setObj('loc', $rootScope.loc);
-      // console.log($rootScope.loc);
-
+      //   // });
       // });
-    // });
     // }
     }
   }

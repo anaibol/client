@@ -20,9 +20,8 @@ app.run(function($rootScope, $state, $stateParams, $window, $ionicPlatform, $cor
   $rootScope.user = $window.user;
 
   $ionicPlatform.ready(function() {
-
     Location.getAddress(function(loc) {
-      console.log(loc);
+      $rootScope.loc = loc;
     });
 
     // $rootScope.$on('$stateChangeSuccess', function(fromState, toState) {

@@ -12,13 +12,12 @@ app.factory('ReverseGeocode', function($window, $http, $ionicPlatform) {
       $ionicPlatform.ready(function() {
         var geocoder = $window.plugin.google.maps.Geocoder;
 
-
         var latlng = new $window.plugin.google.maps.LatLng(lat, lng);
 
         geocoder.geocode({
           'latLng': latlng
         }, function(results, status) {
-          if (status == $window.plugin.maps.GeocoderStatus.OK) {
+          if (status == $window.plugin.google.maps.GeocoderStatus.OK) {
             if (results[1]) {
               cb(results[1]);
             }
