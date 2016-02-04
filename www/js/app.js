@@ -30,12 +30,13 @@ app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $c
     .state('events.list', {
       url: "",
       views: {
-        'home-tab': {
-          templateUrl: "templates/list.html",
-          controller: 'ListCtrl',
-          resolve: {
-          evs: function(Event, $stateParams) {
-            return Event.get($stateParams);
+          'home-tab': {
+            templateUrl: "templates/list.html",
+            controller: 'ListCtrl',
+            resolve: {
+            evs: function(Event, $stateParams) {
+              return Event.get($stateParams);
+            }
           }
         }
       }
